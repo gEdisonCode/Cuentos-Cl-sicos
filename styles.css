@@ -9,7 +9,7 @@
 :root {
   font-size: 62.5%;
   --color-fondo: #eae0d5;
-  --color-texto: #0a0908;
+  --color-texto: #151515;
   --color-active: #22333b;
   --color-autor: #a93f55;
   --selección-texto: #a93f55;
@@ -45,11 +45,12 @@ body {
   font-size: 2.4rem;
   font-family: "Times New Roman", Times, serif;
   color: var(--color-texto);
+  transition: 0.3s;
 }
 
 .navbar button:hover {
   color: var(--color-autor);
-  border-bottom: 2px dashed var(--color-autor);
+  border-bottom: 1px dashed var(--color-autor);
   cursor: pointer;
 }
 
@@ -121,8 +122,8 @@ body {
   position: relative;
   width: 100%;
   height: 42rem;
-  font-family: "roboto" , arial;
-  font-size: 1.8rem;
+  font-family: "roboto", arial;
+  font-size: 1.6rem;
   margin-top: 1rem;
   padding: 2rem;
   overflow-y: scroll;
@@ -130,6 +131,7 @@ body {
   color: var(--color-texto);
 }
 
+/*Barras de scroll y color de la selección de texto*/
 ::-webkit-scrollbar {
   width: 0.2rem;
 }
@@ -147,7 +149,13 @@ body {
   color: white;
 }
 
+
+/*Media Queries*/
 @media screen and (max-width: 920px) {
+  .nombre {
+    font-size: 3.3rem;
+  }
+
   .historia {
     width: 100%;
     height: 43rem;
@@ -179,7 +187,7 @@ body {
   .navbar {
     justify-content: space-around;
     width: 100%;
-    height: 5rem;
+    height: 7rem;
     align-items: center;
     margin: auto;
   }
@@ -203,7 +211,7 @@ body {
   }
 
   .nombre {
-    font-size: 3rem;
+    font-size: 2.4rem;
     text-align: center;
     font-weight: 400;
   }
