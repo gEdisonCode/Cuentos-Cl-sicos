@@ -14,13 +14,13 @@ const claro = () => {
     modoOscuro = null;
 }
 
-if (modoOscuro === "active") {
-    oscuro()
+if (modoOscuro !== "active") {
+    claro()
 }
 
 interruptor.addEventListener("click", () => {
     modoOscuro = localStorage.getItem("modo-oscuro")
-    modoOscuro === "active" ? claro() : oscuro()
+    modoOscuro !== "active" ? oscuro() : claro()
 })
 
 
