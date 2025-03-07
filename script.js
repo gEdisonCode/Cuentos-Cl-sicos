@@ -1,26 +1,26 @@
 /*/ interruptor claro|oscuro /*/
 const interruptor = document.getElementById("tema")
-let modoOscuro = localStorage.getItem("modo-oscuro", "active")
-
-const oscuro = () => {
-    document.body.classList.add("modo-oscuro");
-    localStorage.setItem("modo-oscuro", "active")
-    modoOscuro = "active";
-}
+let modoClaro = localStorage.getItem("modo-claro", "active")
 
 const claro = () => {
-    document.body.classList.remove("modo-oscuro")
-    localStorage.setItem("modo-oscuro", null)
-    modoOscuro = null;
+    document.body.classList.add("modo-claro");
+    localStorage.setItem("modo-claro", "active")
+    modoClaro = "active";
 }
 
-if (modoOscuro !== "active") {
+const oscuro = () => {
+    document.body.classList.remove("modo-claro")
+    localStorage.setItem("modo-claro", null)
+    modoClaro = null;
+}
+
+if (modoClaro === "active") {
     claro()
 }
 
 interruptor.addEventListener("click", () => {
-    modoOscuro = localStorage.getItem("modo-oscuro")
-    modoOscuro !== "active" ? oscuro() : claro()
+    modoClaro = localStorage.getItem("modo-claro")
+    modoClaro !== "active" ? claro() : oscuro()
 })
 
 
