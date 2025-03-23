@@ -1243,6 +1243,7 @@ function renderizado() {
     historia.innerText = aleatorio.historia
     autor.textContent = aleatorio.autor
     imagen.src = aleatorio.foto
+    historia.scrollTop = 0;
 }
 
 siguiente.addEventListener("click", () => renderizado())

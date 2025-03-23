@@ -30,6 +30,7 @@ body {
   padding: 1rem;
   background-color: var(--color-fondo);
   transition: 0.3s;
+  scroll-behavior: smooth;
 }
 
 .navbar {
