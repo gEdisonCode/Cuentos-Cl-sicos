@@ -71,7 +71,7 @@ Es durante la noche, sobre todo, cuando la luna es gibosa y menguante, cuando ve
 
 El fin está próximo. Escucho un ruido en la puerta, como si un cuerpo inmenso y resbaladizo se debatiera contra ella. No dará conmigo. Dios, ¡esa mano! ¡La ventana! ¡La ventana!
 `,
-        foto: "/Cuentos-Cl-sicos/assets/fotos/dagon.png",
+        foto: "/Cuentos-Cl-sicos/assets/Fotos/dagon.png",
     },
     {
         id: 2,
@@ -196,7 +196,7 @@ El año pasado, en Belchamp St. Paul, la gente recordaba aún la llegada de un c
 
 Ocurrió que el pasado año la casita en cuestión llegó a mis manos como parte de un legado. Había estado vacía desde 1863, y no parecían existir perspectivas de alquilarla o de venderla. Y los documentos de que acabo de darles un extracto fueron encontrados en un armario, debajo de la ventana del mejor de los dormitorios de la casa.
 `,
-        foto: "/Cuentos-Cl-sicos/assets/fotos/magnus.png",
+        foto: "/Cuentos-Cl-sicos/assets/Fotos/magnus.png",
     },
     {
         id: 3,
@@ -214,7 +214,7 @@ Esto, sentado, pensaba, aunque sin decir palabra al ave que ahora quemaba mi pec
 
 Dijo el cuervo: "Nunca más". "¡Profeta! -grité-, ser malvado, profeta eres, diablo alado! Por el Diós que veneramos, por el manto celestial, dile a este desventurado si en el Edén lejano a Leonor , ahora entre ánngeles, un día podré abrazar". Dijo el cuervo: "¡Nunca más!". "¡Diablo alado, no hables más!", dije, dando un paso atrás; ¡Que la tromba te devuelva a la negrura abisal! ¡Ni rastro de tu plumaje en recuerdo de tu ultraje quiero en mi portal! ¡Deja en paz mi soledad! ¡Quita el pico de mi pecho y tu sombra del portal!" Dijo el cuervo: "Nunca más". Y el impávido cuervo osado aun sigue, sigue posado, en el pálido busto de Palas que hay encima del portal; y su mirada aguileña es la de un demonio que sueña, cuya sombra el candil en el suelo proyecta fantasmal; y mi alma, de esa sombra que allí flota fantasmal, no se alzará...¡nunca más!.
 `,
-        foto: "/Cuentos-Cl-sicos/assets/fotos/elcuervo.png",
+        foto: "/Cuentos-Cl-sicos/assets/Fotos/elcuervo.png",
     },
     {
         id: 4,
@@ -269,7 +269,7 @@ Ahora cabalgo con los burlones y amigables vampiros en el viento nocturno y de d
 
 Lo he sabido desde que alargué mis dedos hacia la abominación que se encontraba detrás de aquel arco dorado; desde que alargué mis dedos y toqué una fría y firme superficie de pulido cristal.
 `,
-        foto: "/Cuentos-Cl-sicos/assets/fotos/elhombreamarillo.png",
+        foto: "/Cuentos-Cl-sicos/assets/Fotos/elhombreamarillo.png",
     },
     {
         id: 5,
@@ -295,7 +295,7 @@ Mas ella seguía sonriendo, sin exhalar queja alguna, pues veía que el pintor, 
 
 Y no quería ver que los tintes que esparcía en la tela eran extraídos de las mejillas de aquella mujer sentada a su lado. Y cuando pasaron muchas semanas y poco quedaba por hacer, salvo una pincelada en la boca y un matiz en los ojos, el espíritu de la dama osciló, vacilante como la llama en el tubo de la lámpara. Y entonces la pincelada fue puesta y aplicado el matiz, y durante un momento el pintor quedó en trance frente a la obra cumplida. Pero, cuando estaba mirándola, púsose pálido y tembló mientras gritaba: “¡Ciertamente, ésta es la Vida misma!”, y volviose de improviso para mirar a su amada… ¡Estaba muerta!».
 `,
-        foto: "/Cuentos-Cl-sicos/assets/fotos/elretratooval.png",
+        foto: "/Cuentos-Cl-sicos/assets/Fotos/elretratooval.png",
     },
     {
         id: 6,
@@ -464,7 +464,7 @@ Los tutores salieron en pos de Miss Aubrey, pero ya era demasiado tarde: Lord Ru
 
 
 `,
-        foto: "/Cuentos-Cl-sicos/assets/fotos/elvampiro.png",
+        foto: "/Cuentos-Cl-sicos/assets/Fotos/elvampiro.png",
     },
     {
         id: 7,
@@ -575,7 +575,7 @@ Las torturas sufridas fueron indudablemente iguales en aquel momento a las de la
 
 Hay momentos en que, aun para el sereno ojo de la razón, el mundo de nuestra triste humanidad puede cobrar la apariencia del infierno, pero la imaginación del hombre no es Caratis para explorar con impunidad todas sus cavernas. ¡Ay!, la torva legión de los terrores sepulcrales no puede considerarse totalmente imaginaria, pero, como los Demonios en cuya compañía Afrasiab realizó su viaje por el Oxus, deben dormir o nos devorarán, debemos permitirles el sueño, o pereceremos.
 `,
-        foto: "/Cuentos-Cl-sicos/assets/fotos/entierroprematuro.png",
+        foto: "/Cuentos-Cl-sicos/assets/Fotos/entierroprematuro.png",
     },
     {
         id: 8,
@@ -704,7 +704,7 @@ Todo lo que sé es que ese conocimiento es innitamente valioso, y lo que quiero 
 
 Le conté, en una palabra, lo mismo que he escrito aquí. Escuchó con creciente atención, y me di cuenta, para mi sorpresa, por sus exclamaciones y preguntas, que no habría sido indigno, después de todo, de haber sido conado por su esposa. Tan abrupta experiencia de su falta de conanza tuvo un efecto agitado sobre él, pero vi que el choque inmediato se fue desvaneciendo poco a poco y luego se recogía nuevamente en olas de asombro y curiosidad—olas que prometían, pude juzgar perfectamente, romper al nal con la furia de mis propias mareas más altas. Puedo decir que hoy, como víctimas de un deseo no satisfecho, no hay ni una aguja que elegir entre nosotros. El estado del pobre hombre es casi mi consuelo; de hecho, hay momentos en que siento que es casi mi venganza.
 `,
-        foto: "/Cuentos-Cl-sicos/assets/fotos/lagura.png",
+        foto: "/Cuentos-Cl-sicos/assets/Fotos/lagura.png",
     },
     {
         id: 9,
@@ -744,7 +744,7 @@ Reuniendo el terrible coraje de la desesperación, numerosas máscaras se lanzar
 
 Y entonces reconocieron la presencia de la Muerte Roja. Había venido como un ladrón en la noche. Y uno por uno cayeron los convidados en las salas de orgía manchadas de sangre, y cada uno murió en la desesperada actitud de su caída. Y la vida del reloj de ébano se apagó con la del último de aquellos alegres seres. Y las llamas de los trípodes expiraron. Y las tinieblas, y la corrupción, y la Muerte Roja lo dominaron todo.
 `,
-        foto: "/Cuentos-Cl-sicos/assets/fotos/lamuerteroja.png",
+        foto: "/Cuentos-Cl-sicos/assets/Fotos/lamuerteroja.png",
     },
     {
         id: 10,
@@ -764,7 +764,7 @@ Luego, nos dividimos en columnas estrechas, cada una de las cuales parecía atra
 
 Gritando sensiblemente, delirante en silencio, solo los dioses que fueron podrían contarlo. Una sombra enferma y sensible retorciéndose en manos que no son manos, y girando ciegamente a través de medianoches espantosas de creación en descomposición, cadáveres de mundos muertos con llagas que eran ciudades, vientos de osario que rozan las estrellas pálidas y las hacen parpadear. Más allá de los mundos, los vagos fantasmas de cosas monstruosas; columnas a medio ver de templos no consagrados que descansan en rocas innombrables bajo el espacio y se elevan hacia vacíos vertiginosos por encima de las esferas de luz y oscuridad. Y a través de este repugnante cementerio del universo, el ahogado y enloquecedor golpeteo de tambores, y el fno y monótono gemido de flautas blasfemas provenientes de cámaras inconcebibles y sin luz más allá del Tiempo; el repugnante golpeteo y sonido al que bailan lenta, torpe y absurdamente los dioses gigantescos y tenebrosos, los últimos dioses ciegos, mudos y sin mente, cuyo alma es Nyarlathotep.
 `,
-        foto: "./assets/fotos/nyarlathotep.png",
+        foto: "./assets/Fotos/nyarlathotep.png",
     },
     {
         id: 11,
@@ -897,7 +897,7 @@ Sin embargo, había un viejo caballero alto y de aspecto seco, con cejas fruncid
 
 El narrador, que estaba a punto de llevarse una copa de vino a los labios como descanso tras su esfuerzo, hizo una pausa, miró al interrogador con aire de innita deferencia, y, bajando lentamente la copa sobre la mesa, observó que la historia estaba destinada, de manera lógica, a probar lo siguiente: “Que no hay situación en la vida que no tenga sus ventajas y placeres—siempre y cuando tomemos una broma tal como viene: “Que, por lo tanto, el que corre carreras con soldados fantasmas probablemente tendrá una jineteada difícil. “Ergo, para un maestro rural, ser rechazado por la mano de una heredera holandesa es un paso seguro hacia un alto puesto en el estado.” El cauteloso viejo caballero frunció aún más las cejas tras esta explicación, desconcertado por la razonamiento del silogismo; mientras que, a mi parecer, el hombre de ropa de sal y pimienta lo miraba con una mirada triunfante. Finalmente observó que todo esto estaba muy bien, pero aún así le parecía que la historia era un poco exagerada—había uno o dos puntos sobre los cuales tenía sus dudas. “De hecho, señor,” respondió el narrador, “en cuanto a ese asunto, no creo ni la mitad de lo que he contado.” D. K
 `,
-        foto: "/Cuentos-Cl-sicos/assets/fotos/sleepyhollow.png",
+        foto: "/Cuentos-Cl-sicos/assets/Fotos/sleepyhollow.png",
     },
     {
         id: 12,
@@ -1127,7 +1127,7 @@ Al comenzar a sonar la campana de alarma de la Casa del Juez, se congregó en se
 Del extremo de la cuerda de la gran campana de alarma pendía el cuerpo del estudiante; y en el cuadro, la cara del Juez mostraba una sonrisa maligna.
 
 `,
-        foto: "/Cuentos-Cl-sicos/assets/fotos/lacasadeljuez.png",
+        foto: "/Cuentos-Cl-sicos/assets/Fotos/lacasadeljuez.png",
     },
     {
         id: 13,
@@ -1232,7 +1232,7 @@ Estaba tirado en una celda de considerable tamaño, la cual no había sido pertu
 
 El cuadro representa una habitación de albañilería antigua, como las que se pueden encontrar en la mayoría de las viejas catedrales, y está tenuemente iluminado por una lámpara que lleva en la mano una gura femenina, como la que hemos intentado describir; en el fondo, y a la izquierda de quien examina la pintura, se encuentra la gura de un hombre aparentemente despertado del sueño, y por su actitud, con la mano sobre la espada, mostrando considerable alarma: esta última gura está iluminada solo por el resplandor moribundo de un fuego de leña o carbón. Toda la obra exhibe una hermosa muestra de esa distribución artística y singular de luz y sombra que ha hecho inmortal el nombre de Schalken entre los artistas de su país. Esta historia es tradicional, y el lector fácilmente percibirá, por nuestra cuidadosa omisión de realzar muchos puntos de la narrativa, cuando un poco de color adicional podría haber agregado efecto al relato, que hemos deseado presentar ante él no un invento de la mente, sino una curiosa tradición vinculada a, y perteneciente, a la biografía de un artista famoso.
 `,
-        foto: "/Cuentos-Cl-sicos/assets/fotos/lavidadelpintor.png",
+        foto: "/Cuentos-Cl-sicos/assets/Fotos/lavidadelpintor.png",
     },
 ]
 
