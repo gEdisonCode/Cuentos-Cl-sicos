@@ -23,7 +23,6 @@ interruptor.addEventListener("click", () => {
     modoClaro !== "active" ? claro() : oscuro()
 })
 
-
 /*/ Función de Cuento aleatorio /*/
 const titulo = document.getElementById("titulo")
 const historia = document.getElementById("historia")
@@ -1247,5 +1246,5 @@ function renderizado() {
 }
 
 siguiente.addEventListener("click", () => renderizado())
-
+/*G.Edison*/
 renderizado()

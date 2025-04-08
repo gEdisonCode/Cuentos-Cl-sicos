@@ -70,7 +70,7 @@ body {
   font-weight: 400;
   color: var(--color-autor);
 }
-
+/*Proyecto por G.Edison*/
 .contenedor {
   display: flex;
   justify-content: center;
@@ -118,7 +118,7 @@ body {
   text-transform: uppercase;
   color: var(--color-autor);
 }
-
+/*Proyecto por G.Edison*/
 .historia {
   position: relative;
   width: 100%;
@@ -150,7 +150,7 @@ body {
   color: white;
 }
 
-
+/*Proyecto por G.Edison*/
 /*Media Queries*/
 @media screen and (max-width: 920px) {
   .nombre {
