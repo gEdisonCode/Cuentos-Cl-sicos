@@ -1,53 +1,66 @@
-"use strict";
-
 /*/ interruptor claro|oscuro /*/
-const interruptor = document.getElementById("tema");
+const interruptor = document.getElementById("tema") as HTMLButtonElement | null;
 let modoClaro = localStorage.getItem("modo-claro");
 
-const claro = () => {
-    document.body.classList.add("modo-claro");
-    localStorage.setItem("modo-claro", "active");
-    modoClaro = "active";
+const claro = (): void => {
+  document.body.classList.add("modo-claro");
+  localStorage.setItem("modo-claro", "active");
+  modoClaro = "active";
 };
-const oscuro = () => {
-    document.body.classList.remove("modo-claro");
-    localStorage.setItem("modo-claro", "");
-    modoClaro = null;
+
+const oscuro = (): void => {
+  document.body.classList.remove("modo-claro");
+  localStorage.setItem("modo-claro", "");
+  modoClaro = null;
 };
 
 if (modoClaro === "active") {
-    claro();
+  claro();
 }
-interruptor === null || interruptor === void 0 ? void 0 : interruptor.addEventListener("click", () => {
-    modoClaro = localStorage.getItem("modo-claro");
-    modoClaro !== "active" ? claro() : oscuro();
+
+interruptor?.addEventListener("click", () => {
+  modoClaro = localStorage.getItem("modo-claro");
+  modoClaro !== "active" ? claro() : oscuro();
 });
 
 /*/ Función de Cuento aleatorio /*/
-const titulo = document.getElementById("titulo");
-const historia = document.getElementById("historia");
-const autor = document.getElementById("autor");
-const imagen = document.getElementById("imagen");
-const siguiente = document.getElementById("siguiente");
-function renderizado() {
-    if (titulo && autor && historia) {
-        const aleatorio = cuentos[Math.floor(Math.random() * cuentos.length)];
-        titulo.textContent = aleatorio.titulo;
-        historia.innerText = aleatorio.historia;
-        autor.textContent = aleatorio.autor;
-        imagen.src = aleatorio.foto;
-        historia.scrollTop = 0;
-    }
+const titulo = document.getElementById("titulo") as HTMLHeadingElement | null;
+const historia = document.getElementById(
+  "historia"
+) as HTMLParagraphElement | null;
+const autor = document.getElementById("autor") as HTMLParagraphElement | null;
+const imagen = document.getElementById("imagen") as HTMLImageElement;
+const siguiente = document.getElementById("siguiente") as HTMLElement | null;
+
+interface Cuentos {
+  id: number;
+  autor: string;
+  titulo: string;
+  historia: string;
+  foto?: any;
 }
 
-siguiente === null || siguiente === void 0 ? void 0 : siguiente.addEventListener("click", () => renderizado());
+function renderizado() {
+  if (titulo && autor && historia) {
+    const aleatorio = cuentos[Math.floor(Math.random() * cuentos.length)];
+    titulo.textContent = aleatorio.titulo;
+    historia.innerText = aleatorio.historia;
+    autor.textContent = aleatorio.autor;
+    imagen.src = aleatorio.foto;
+    historia.scrollTop = 0;
+  }
+}
+
+siguiente?.addEventListener("click", () => renderizado());
+
 /*G.Edison*/
-const cuentos = [
-    {
-        id: 1,
-        autor: "Lovecraft",
-        titulo: "Dagon",
-        historia: `Escribo esto bajo una considerable tensión mental, ya que al caer la noche mi existencia tocará a su fin. Sin un céntimo, y agotada la provisión de droga que es lo único que me hace soportable la vida, no podré aguantar mucho más esta tortura y me arrojaré por la ventana de esta buhardilla a la mísera calle de abajo. Que mi adicción a la morfina no les lleve a considerarme débil o un degenerado. Cuando hayan leído estas páginas apresuradamente garabateadas, podrán comprender, aunque no completamente, por qué debo olvidar o morir.
+
+const cuentos: Cuentos[] = [
+  {
+    id: 1,
+    autor: "Lovecraft",
+    titulo: "Dagon",
+    historia: `Escribo esto bajo una considerable tensión mental, ya que al caer la noche mi existencia tocará a su fin. Sin un céntimo, y agotada la provisión de droga que es lo único que me hace soportable la vida, no podré aguantar mucho más esta tortura y me arrojaré por la ventana de esta buhardilla a la mísera calle de abajo. Que mi adicción a la morfina no les lleve a considerarme débil o un degenerado. Cuando hayan leído estas páginas apresuradamente garabateadas, podrán comprender, aunque no completamente, por qué debo olvidar o morir.
 
 Fue en una de las zonas más abiertas y desoladas del gran Pacífico donde el buque del que yo era sobrecargo fue alcanzado por el cazador de barcos alemán. Entonces la gran guerra se hallaba en sus comienzos y las fuerzas oceánicas del Huno aún no habían llegado a su posterior decadencia; así que nuestra nave fue presa según las convenciones, y su tripulación tratada con el respeto y consideración debida a prisioneros de guerra. De hecho, la disciplina de nuestros captores era tan relajada que cinco días más tarde logré huir en un botecillo con agua y provisiones para bastante tiempo.
 
@@ -83,13 +96,13 @@ Es durante la noche, sobre todo, cuando la luna es gibosa y menguante, cuando ve
 
 El fin está próximo. Escucho un ruido en la puerta, como si un cuerpo inmenso y resbaladizo se debatiera contra ella. No dará conmigo. Dios, ¡esa mano! ¡La ventana! ¡La ventana!
 `,
-        foto: "/Cuentos-Cl-sicos/assets/Fotos/dagon.png",
-    },
-    {
-        id: 2,
-        autor: "M. R. James",
-        titulo: "El Conde Magnus",
-        historia: `Lo último que explicaré al lector en estas páginas es de qué modo llegaron a mis manos los documentos a base de los cuales he construido este relato. Pero antes debo explicar la clase de documentos que poseo.
+    foto: "/Cuentos-Cl-sicos/assets/Fotos/dagon.png",
+  },
+  {
+    id: 2,
+    autor: "M. R. James",
+    titulo: "El Conde Magnus",
+    historia: `Lo último que explicaré al lector en estas páginas es de qué modo llegaron a mis manos los documentos a base de los cuales he construido este relato. Pero antes debo explicar la clase de documentos que poseo.
 
 Consisten, parcialmente, en una serie de apuntes para un libro de viajes, uno de esos volúmenes tan corrientes en los años 1840 a 1850. El Journal of a Residence in Jutland and the Danish Isles, de Horace Marryat, es un ejemplo típico de la clase de libro a que me refiero. El tema suele ser la descripción de algún país poco conocido del continente. Tienen ilustraciones al boj o al metal. Proporcionan información acerca de los hoteles y de los medios de comunicación, tal como la que ahora esperamos encontrar en una guía, y reproducen conversaciones con extranjeros inteligentes, con mesoneros ocurrentes y con locuaces campesinos. En una palabra, se trata de unos libros que en lenguaje moderno llamaríamos «periodísticos».
 
@@ -208,13 +221,13 @@ El año pasado, en Belchamp St. Paul, la gente recordaba aún la llegada de un c
 
 Ocurrió que el pasado año la casita en cuestión llegó a mis manos como parte de un legado. Había estado vacía desde 1863, y no parecían existir perspectivas de alquilarla o de venderla. Y los documentos de que acabo de darles un extracto fueron encontrados en un armario, debajo de la ventana del mejor de los dormitorios de la casa.
 `,
-        foto: "/Cuentos-Cl-sicos/assets/Fotos/magnus.png",
-    },
-    {
-        id: 3,
-        autor: "Poe",
-        titulo: "El Cuervo",
-        historia: `Cierta noche aciaga, cuando, con la mente cansada, meditaba sobre varios libracos de sabiduría ancestral y asentía, adormecido, de pronto se oyó un rasguido, como si alguien muy suavemente llamara a mi portal. "Es un visitante -me dige-, que está llamando al portal; sólo eso y nada más." ¡Ah, recuerdo tan claramente aquel desolado diciembre! Cada chispa resplandeciente dejaba un rastro espectral. Yo esperaba ansioso el alba, pues no había hallado calma en mis libros,ni consuelo a la perdida abismal de aquella a quien los ángeles Leonor podrán llamar y aquí nadie nombrará. Cada crujido de las cortinas purpúreas y cetrinas me embargaba de dañinas dudas y mi sobresalto era tal que, para calmarr mi angustia repetí con voz mustia: "No es sino un visitante que ha llegado a mi portal; un tardío visitante esperando en mi portal. Sólo eso y nada más". 
+    foto: "/Cuentos-Cl-sicos/assets/Fotos/magnus.png",
+  },
+  {
+    id: 3,
+    autor: "Poe",
+    titulo: "El Cuervo",
+    historia: `Cierta noche aciaga, cuando, con la mente cansada, meditaba sobre varios libracos de sabiduría ancestral y asentía, adormecido, de pronto se oyó un rasguido, como si alguien muy suavemente llamara a mi portal. "Es un visitante -me dige-, que está llamando al portal; sólo eso y nada más." ¡Ah, recuerdo tan claramente aquel desolado diciembre! Cada chispa resplandeciente dejaba un rastro espectral. Yo esperaba ansioso el alba, pues no había hallado calma en mis libros,ni consuelo a la perdida abismal de aquella a quien los ángeles Leonor podrán llamar y aquí nadie nombrará. Cada crujido de las cortinas purpúreas y cetrinas me embargaba de dañinas dudas y mi sobresalto era tal que, para calmarr mi angustia repetí con voz mustia: "No es sino un visitante que ha llegado a mi portal; un tardío visitante esperando en mi portal. Sólo eso y nada más". 
 
 Mas de pronto me animé y sin vacilación hablé: "Caballero -dije-, o señora, me tendréis que disculpar pues estaba adormecido cuando oí vuestro rasguido y tan suave había sido vuestro golpe en mi portal que dudé de haberlo oído...", y abrí de golpe el portal: sólo sombras, nada más. La noche miré de lleno, de temor y dudas pleno, y soñé sueños que nadie osó soñar jamás; pero en este silencio atroz, superior a toda voz, sólo se oyó la palabra "Leonor", que yo me atreví a susurrar... sí, susurré la palabra "Leonor" y un eco volvióla a nombrar. Sólo eso y nada más. Aunque mi alma ardía por dentro regresé a mis aposentos pero pronto aquel rasguido se escuchó más pertinaz. "Esta vez quien sea que llama ha llamado a mi ventana; veré pues de qué se trata, que misterio habrá detrás. 
 
@@ -226,13 +239,13 @@ Esto, sentado, pensaba, aunque sin decir palabra al ave que ahora quemaba mi pec
 
 Dijo el cuervo: "Nunca más". "¡Profeta! -grité-, ser malvado, profeta eres, diablo alado! Por el Diós que veneramos, por el manto celestial, dile a este desventurado si en el Edén lejano a Leonor , ahora entre ánngeles, un día podré abrazar". Dijo el cuervo: "¡Nunca más!". "¡Diablo alado, no hables más!", dije, dando un paso atrás; ¡Que la tromba te devuelva a la negrura abisal! ¡Ni rastro de tu plumaje en recuerdo de tu ultraje quiero en mi portal! ¡Deja en paz mi soledad! ¡Quita el pico de mi pecho y tu sombra del portal!" Dijo el cuervo: "Nunca más". Y el impávido cuervo osado aun sigue, sigue posado, en el pálido busto de Palas que hay encima del portal; y su mirada aguileña es la de un demonio que sueña, cuya sombra el candil en el suelo proyecta fantasmal; y mi alma, de esa sombra que allí flota fantasmal, no se alzará...¡nunca más!.
 `,
-        foto: "/Cuentos-Cl-sicos/assets/Fotos/elcuervo.png",
-    },
-    {
-        id: 4,
-        autor: "Lovecraft",
-        titulo: "El extraño",
-        historia: `Aquella noche el barón soñó mucho;
+    foto: "/Cuentos-Cl-sicos/assets/Fotos/elcuervo.png",
+  },
+  {
+    id: 4,
+    autor: "Lovecraft",
+    titulo: "El extraño",
+    historia: `Aquella noche el barón soñó mucho;
 y todos sus antepasados, con figura y forma
 de bruja y diablo y cadáver,
 acompañaron sus pesadillas.
@@ -281,13 +294,13 @@ Ahora cabalgo con los burlones y amigables vampiros en el viento nocturno y de d
 
 Lo he sabido desde que alargué mis dedos hacia la abominación que se encontraba detrás de aquel arco dorado; desde que alargué mis dedos y toqué una fría y firme superficie de pulido cristal.
 `,
-        foto: "/Cuentos-Cl-sicos/assets/Fotos/elhombreamarillo.png",
-    },
-    {
-        id: 5,
-        autor: "Poe",
-        titulo: "El retrato oval",
-        historia: `El castillo al cual mi criado se había atrevido a entrar por la fuerza antes de permitir que, gravemente herido como estaba, pasara yo la noche al aire libre, era una de esas construcciones en las que se mezclan la lobreguez y la grandeza, y que durante largo tiempo se han alzado cejijuntas en los Apeninos, tan ciertas en la realidad como en la imaginación de Mrs. Radcliffe. Según toda apariencia, el castillo había sido recién abandonado, aunque temporariamente. Nos instalamos en uno de los aposentos más pequeños y menos suntuosos. Hallábase en una apartada torre del edificio; sus decoraciones eran ricas, pero ajadas y viejas. Colgaban tapices de las paredes, que engalanaban cantidad y variedad de trofeos heráldicos, así como un número insólitamente grande de vivaces pinturas modernas en marcos con arabescos de oro. 
+    foto: "/Cuentos-Cl-sicos/assets/Fotos/elhombreamarillo.png",
+  },
+  {
+    id: 5,
+    autor: "Poe",
+    titulo: "El retrato oval",
+    historia: `El castillo al cual mi criado se había atrevido a entrar por la fuerza antes de permitir que, gravemente herido como estaba, pasara yo la noche al aire libre, era una de esas construcciones en las que se mezclan la lobreguez y la grandeza, y que durante largo tiempo se han alzado cejijuntas en los Apeninos, tan ciertas en la realidad como en la imaginación de Mrs. Radcliffe. Según toda apariencia, el castillo había sido recién abandonado, aunque temporariamente. Nos instalamos en uno de los aposentos más pequeños y menos suntuosos. Hallábase en una apartada torre del edificio; sus decoraciones eran ricas, pero ajadas y viejas. Colgaban tapices de las paredes, que engalanaban cantidad y variedad de trofeos heráldicos, así como un número insólitamente grande de vivaces pinturas modernas en marcos con arabescos de oro. 
 
 Aquellas pinturas, no solamente emplazadas a lo largo de las paredes sino en diversos nichos que la extraña arquitectura del castillo exigía, despertaron profundamente mi interés, quizá a causa de mi incipiente delirio; ordené, por tanto, a Pedro que cerrara las pesadas persianas del aposento —pues era ya de noche—, que encendiera las bujías de un alto candelabro situado a la cabecera de mi lecho y descorriera de par en par las orladas cortinas de terciopelo negro que envolvían la cama. Al hacerlo así deseaba entregarme, si no al sueño, por lo menos a la alternada contemplación de las pinturas y al examen de un pequeño volumen que habíamos encontrado sobre la almohada y que contenía la descripción y la crítica de aquéllas.
 
@@ -307,13 +320,13 @@ Mas ella seguía sonriendo, sin exhalar queja alguna, pues veía que el pintor, 
 
 Y no quería ver que los tintes que esparcía en la tela eran extraídos de las mejillas de aquella mujer sentada a su lado. Y cuando pasaron muchas semanas y poco quedaba por hacer, salvo una pincelada en la boca y un matiz en los ojos, el espíritu de la dama osciló, vacilante como la llama en el tubo de la lámpara. Y entonces la pincelada fue puesta y aplicado el matiz, y durante un momento el pintor quedó en trance frente a la obra cumplida. Pero, cuando estaba mirándola, púsose pálido y tembló mientras gritaba: “¡Ciertamente, ésta es la Vida misma!”, y volviose de improviso para mirar a su amada… ¡Estaba muerta!».
 `,
-        foto: "/Cuentos-Cl-sicos/assets/Fotos/elretratooval.png",
-    },
-    {
-        id: 6,
-        autor: "W. Polidori",
-        titulo: "El vampiro",
-        historia: `
+    foto: "/Cuentos-Cl-sicos/assets/Fotos/elretratooval.png",
+  },
+  {
+    id: 6,
+    autor: "W. Polidori",
+    titulo: "El vampiro",
+    historia: `
 
 Por aquel tiempo, en medio de la disipación habitual del invierno londinense y entre las numerosas reuniones a que la moda obligaba en la época, apareció un Lord aún más notable por sus particularidades que por su rango. Su mirada se cernía sobre la alegría general que se desataba a su alrededor, con esa indiferencia propia de quienes no participarán de ella en el futuro. Podría decirse que sólo la graciosa sonrisa de la belleza era capaz de llamar su atención, y aun así únicamente para destruirla con una mirada sobre los labios encantadores que la dibujaran, provocando un escalofrío en el corazón allí donde sólo había reinado el afán de placer. Las mujeres que sentían esta terrible sensación no hubieran podido decir de dónde provenía. 
 
@@ -476,13 +489,13 @@ Los tutores salieron en pos de Miss Aubrey, pero ya era demasiado tarde: Lord Ru
 
 
 `,
-        foto: "/Cuentos-Cl-sicos/assets/Fotos/elvampiro.png",
-    },
-    {
-        id: 7,
-        autor: "Poe",
-        titulo: "El entierro prematuro",
-        historia: `Hay ciertos temas de interés absorbente, pero demasiado horribles para ser objeto de una obra de ficción. El mero escritor romántico debe evitarlos si no desea ofender o desagradar. Sólo se los usa con propiedad cuando lo severo y lo majestuoso de la verdad los santifican y los sostienen. Nos estremecemos con el más intenso de los «dolores agradables» ante los relatos del paso del Berésina, del terremoto de Lisboa, de la peste de Londres y de la matanza de San Bartolomé, o la asfixia de los ciento veintitrés prisioneros en el Pozo Negro de Calcuta. Pero en estos relatos lo excitante es el hecho, la realidad, la historia. Como invenciones nos inspirarían simple aversión.
+    foto: "/Cuentos-Cl-sicos/assets/Fotos/elvampiro.png",
+  },
+  {
+    id: 7,
+    autor: "Poe",
+    titulo: "El entierro prematuro",
+    historia: `Hay ciertos temas de interés absorbente, pero demasiado horribles para ser objeto de una obra de ficción. El mero escritor romántico debe evitarlos si no desea ofender o desagradar. Sólo se los usa con propiedad cuando lo severo y lo majestuoso de la verdad los santifican y los sostienen. Nos estremecemos con el más intenso de los «dolores agradables» ante los relatos del paso del Berésina, del terremoto de Lisboa, de la peste de Londres y de la matanza de San Bartolomé, o la asfixia de los ciento veintitrés prisioneros en el Pozo Negro de Calcuta. Pero en estos relatos lo excitante es el hecho, la realidad, la historia. Como invenciones nos inspirarían simple aversión.
 
 He mencionado algunas de las más destacadas y augustas calamidades que registra la historia; pero en ellas el alcance, no menos que el carácter de la calamidad, es lo que con tanta vivacidad impresiona la imaginación. No necesito recordar al lector que, del largo y horripilante catálogo de miserias humanas, podría haber elegido muchos ejemplos individuales más llenos de sufrimiento esencial que cualquiera de estos vastos desastres generales. La verdadera desgracia, el infortunio por esencia, es particular, no difuso. ¡Agradezcamos a Dios misericordioso que los horribles extremos de agonía sean soportados por el hombre solo y nunca por el hombre en masa!
 
@@ -587,13 +600,13 @@ Las torturas sufridas fueron indudablemente iguales en aquel momento a las de la
 
 Hay momentos en que, aun para el sereno ojo de la razón, el mundo de nuestra triste humanidad puede cobrar la apariencia del infierno, pero la imaginación del hombre no es Caratis para explorar con impunidad todas sus cavernas. ¡Ay!, la torva legión de los terrores sepulcrales no puede considerarse totalmente imaginaria, pero, como los Demonios en cuya compañía Afrasiab realizó su viaje por el Oxus, deben dormir o nos devorarán, debemos permitirles el sueño, o pereceremos.
 `,
-        foto: "/Cuentos-Cl-sicos/assets/Fotos/entierroprematuro.png",
-    },
-    {
-        id: 8,
-        autor: "H. James ",
-        titulo: "La gura en la alfombra",
-        historia: `Había hecho algunas cosas y ganado algunas monedas—tal vez incluso había tenido tiempo de comenzar a pensar que era más importante de lo que pensaban los que me trataban con condescendencia; pero cuando hago un pequeño repaso de mi camino (un hábito inquieto, ya que no ha sido de los más largos aún), considero que mi verdadero comienzo fue la tarde en que George Corvick, agitado y preocupado, entró a pedirme un favor. 
+    foto: "/Cuentos-Cl-sicos/assets/Fotos/entierroprematuro.png",
+  },
+  {
+    id: 8,
+    autor: "H. James ",
+    titulo: "La gura en la alfombra",
+    historia: `Había hecho algunas cosas y ganado algunas monedas—tal vez incluso había tenido tiempo de comenzar a pensar que era más importante de lo que pensaban los que me trataban con condescendencia; pero cuando hago un pequeño repaso de mi camino (un hábito inquieto, ya que no ha sido de los más largos aún), considero que mi verdadero comienzo fue la tarde en que George Corvick, agitado y preocupado, entró a pedirme un favor. 
 
 Él había hecho más cosas que yo y ganado más monedas, aunque había ocasiones de ingenio que pensaba que a veces pasaba por alto. Sin embargo, aquella tarde sólo pude declararle que nunca dejó escapar una ocasión cuando se trataba de la amabilidad. Hubo casi éxtasis al oír que me proponía preparar para The Middle, el órgano de nuestras lucubraciones, llamado así por el día de su aparición en la semana, un artículo del cual se había hecho responsable y cuyo tema, atado con un cordón grueso, dejó sobre mi mesa. Me lancé sobre mi oportunidad—es decir, sobre el primer volumen—y presté escasa atención a la explicación de mi amigo sobre su petición. ¿Qué explicación podía ser más pertinente que mi evidente idoneidad para la tarea? Había escrito sobre Hugh Vereker, pero nunca una palabra en The Middle, donde mis tratos se limitaban principalmente a las damas y los poetas menores. 
 
@@ -716,13 +729,13 @@ Todo lo que sé es que ese conocimiento es innitamente valioso, y lo que quiero 
 
 Le conté, en una palabra, lo mismo que he escrito aquí. Escuchó con creciente atención, y me di cuenta, para mi sorpresa, por sus exclamaciones y preguntas, que no habría sido indigno, después de todo, de haber sido conado por su esposa. Tan abrupta experiencia de su falta de conanza tuvo un efecto agitado sobre él, pero vi que el choque inmediato se fue desvaneciendo poco a poco y luego se recogía nuevamente en olas de asombro y curiosidad—olas que prometían, pude juzgar perfectamente, romper al nal con la furia de mis propias mareas más altas. Puedo decir que hoy, como víctimas de un deseo no satisfecho, no hay ni una aguja que elegir entre nosotros. El estado del pobre hombre es casi mi consuelo; de hecho, hay momentos en que siento que es casi mi venganza.
 `,
-        foto: "/Cuentos-Cl-sicos/assets/Fotos/lagura.png",
-    },
-    {
-        id: 9,
-        autor: "Poe",
-        titulo: "La máscara de la Muerte Roja",
-        historia: `La «Muerte Roja» había devastado el país durante largo tiempo. Jamás una peste había sido tan fatal y tan espantosa. La sangre era su encarnación y su sello: el rojo y el horror de la sangre. Comenzaba con agudos dolores, un vértigo repentino, y luego los poros sangraban y sobrevenía la muerte. Las manchas escarlata en el cuerpo y la cara de la víctima eran el bando de la peste, que la aislaba de toda ayuda y de toda simpatía. Y la invasión, progreso y fin de la enfermedad se cumplían en media hora.
+    foto: "/Cuentos-Cl-sicos/assets/Fotos/lagura.png",
+  },
+  {
+    id: 9,
+    autor: "Poe",
+    titulo: "La máscara de la Muerte Roja",
+    historia: `La «Muerte Roja» había devastado el país durante largo tiempo. Jamás una peste había sido tan fatal y tan espantosa. La sangre era su encarnación y su sello: el rojo y el horror de la sangre. Comenzaba con agudos dolores, un vértigo repentino, y luego los poros sangraban y sobrevenía la muerte. Las manchas escarlata en el cuerpo y la cara de la víctima eran el bando de la peste, que la aislaba de toda ayuda y de toda simpatía. Y la invasión, progreso y fin de la enfermedad se cumplían en media hora.
 
 Pero el príncipe Próspero era feliz, intrépido y sagaz. Cuando sus dominios quedaron semidespoblados llamó a su lado a mil robustos y desaprensivos amigos de entre los caballeros y damas de su corte, y se retiró con ellos al seguro encierro de una de sus abadías fortificadas. Era ésta de amplia y magnífica construcción y había sido creada por el excéntrico aunque majestuoso gusto del príncipe. Una sólida y altísima muralla la circundaba. Las puertas de la muralla eran de hierro. Una vez adentro, los cortesanos trajeron fraguas y pesados martillos y soldaron los cerrojos. Habían resuelto no dejar ninguna vía de ingreso o de salida a los súbitos impulsos de la desesperación o del frenesí. La abadía estaba ampliamente aprovisionada. Con precauciones semejantes, los cortesanos podían desafiar el contagio. Que el mundo exterior se las arreglara por su cuenta; entretanto, era una locura afligirse o meditar. El príncipe había reunido todo lo necesario para los placeres. Había bufones, improvisadores, bailarines y músicos; había hermosura y vino. Todo eso y la seguridad estaban del lado de adentro. Afuera estaba la Muerte Roja.
 
@@ -756,13 +769,13 @@ Reuniendo el terrible coraje de la desesperación, numerosas máscaras se lanzar
 
 Y entonces reconocieron la presencia de la Muerte Roja. Había venido como un ladrón en la noche. Y uno por uno cayeron los convidados en las salas de orgía manchadas de sangre, y cada uno murió en la desesperada actitud de su caída. Y la vida del reloj de ébano se apagó con la del último de aquellos alegres seres. Y las llamas de los trípodes expiraron. Y las tinieblas, y la corrupción, y la Muerte Roja lo dominaron todo.
 `,
-        foto: "/Cuentos-Cl-sicos/assets/Fotos/lamuerteroja.png",
-    },
-    {
-        id: 10,
-        autor: "Lovecraft",
-        titulo: "Nyarlathotep",
-        historia: `Nyarlathotep… el caos reptante… soy el último… le hablaré al vacío que escucha… No recuerdo con claridad cuándo comenzó, pero fue hace meses. La tensión general era espantosa. A una temporada de agitación política y social se sumó una extraña y ominosa aprensión de un peligro físico atroz; un peligro amplio y abarcador, un peligro que solo podría imaginarse en las más terribles fantasías nocturnas. Recuerdo que las personas iban de un lado a otro con rostros pálidos y preocupados, susurrando advertencias y profecías que nadie se atrevía a repetir conscientemente ni a reconocer que había escuchado. Una sensación de culpa monstruosa se cernía sobre la tierra, y de los abismos entre las estrellas soplaban corrientes heladas que hacían temblar a los hombres en lugares oscuros y solitarios. Hubo una alteración demoníaca en la secuencia de las estaciones: el calor otoñal persistía de manera espeluznante, y todos sentían que el mundo y quizá el universo habían dejado de estar bajo el control de dioses o fuerzas conocidas para quedar en manos de dioses o fuerzas desconocidas. Y fue entonces cuando Nyarlathotep salió de Egipto. Nadie sabía quién era, pero tenía la sangre nativa de la antigüedad y la apariencia de un faraón. Los fellahin se arrodillaban al verlo, aunque no podían explicar por qué. 
+    foto: "/Cuentos-Cl-sicos/assets/Fotos/lamuerteroja.png",
+  },
+  {
+    id: 10,
+    autor: "Lovecraft",
+    titulo: "Nyarlathotep",
+    historia: `Nyarlathotep… el caos reptante… soy el último… le hablaré al vacío que escucha… No recuerdo con claridad cuándo comenzó, pero fue hace meses. La tensión general era espantosa. A una temporada de agitación política y social se sumó una extraña y ominosa aprensión de un peligro físico atroz; un peligro amplio y abarcador, un peligro que solo podría imaginarse en las más terribles fantasías nocturnas. Recuerdo que las personas iban de un lado a otro con rostros pálidos y preocupados, susurrando advertencias y profecías que nadie se atrevía a repetir conscientemente ni a reconocer que había escuchado. Una sensación de culpa monstruosa se cernía sobre la tierra, y de los abismos entre las estrellas soplaban corrientes heladas que hacían temblar a los hombres en lugares oscuros y solitarios. Hubo una alteración demoníaca en la secuencia de las estaciones: el calor otoñal persistía de manera espeluznante, y todos sentían que el mundo y quizá el universo habían dejado de estar bajo el control de dioses o fuerzas conocidas para quedar en manos de dioses o fuerzas desconocidas. Y fue entonces cuando Nyarlathotep salió de Egipto. Nadie sabía quién era, pero tenía la sangre nativa de la antigüedad y la apariencia de un faraón. Los fellahin se arrodillaban al verlo, aunque no podían explicar por qué. 
 
 Dijo que había surgido de la oscuridad de veintisiete siglos y que había recibido mensajes de lugares que no estaban en este planeta. Nyarlathotep llegó a las tierras de la civilización, moreno, esbelto y siniestro, siempre adquiriendo extraños instrumentos de vidrio y metal y combinándolos en dispositivos aún más extraños. Hablaba mucho de las ciencias, de la electricidad y la psicología, y realizaba exhibiciones de poder que dejaban mudos a sus espectadores y, al mismo tiempo, hacían crecer su fama de manera desmesurada. Los hombres se aconsejaban mutuamente ver a Nyarlathotep, y temblaban. Y donde iba Nyarlathotep, el descanso desaparecía; pues las primeras horas de la madrugada se desgarraban con los gritos de pesadillas. 
 
@@ -776,13 +789,13 @@ Luego, nos dividimos en columnas estrechas, cada una de las cuales parecía atra
 
 Gritando sensiblemente, delirante en silencio, solo los dioses que fueron podrían contarlo. Una sombra enferma y sensible retorciéndose en manos que no son manos, y girando ciegamente a través de medianoches espantosas de creación en descomposición, cadáveres de mundos muertos con llagas que eran ciudades, vientos de osario que rozan las estrellas pálidas y las hacen parpadear. Más allá de los mundos, los vagos fantasmas de cosas monstruosas; columnas a medio ver de templos no consagrados que descansan en rocas innombrables bajo el espacio y se elevan hacia vacíos vertiginosos por encima de las esferas de luz y oscuridad. Y a través de este repugnante cementerio del universo, el ahogado y enloquecedor golpeteo de tambores, y el fno y monótono gemido de flautas blasfemas provenientes de cámaras inconcebibles y sin luz más allá del Tiempo; el repugnante golpeteo y sonido al que bailan lenta, torpe y absurdamente los dioses gigantescos y tenebrosos, los últimos dioses ciegos, mudos y sin mente, cuyo alma es Nyarlathotep.
 `,
-        foto: "./assets/Fotos/nyarlathotep.png",
-    },
-    {
-        id: 11,
-        autor: "W. Irving",
-        titulo: "Sleepy Hollow",
-        historia: `ENCONTRADO ENTRE LOS PAPELEROS DEL FALLECIDO DIEDRICH KNICKERBOCKER. 
+    foto: "./assets/Fotos/nyarlathotep.png",
+  },
+  {
+    id: 11,
+    autor: "W. Irving",
+    titulo: "Sleepy Hollow",
+    historia: `ENCONTRADO ENTRE LOS PAPELEROS DEL FALLECIDO DIEDRICH KNICKERBOCKER. 
 
 "Era una tierra placentera de cabezas adormecidas, De sueños que ondean ante el ojo entrecerrado; Y de castillos alegres en las nubes que pasan, Fluyendo por siempre alrededor de un cielo de verano." –Castillo de la Indolencia. En el seno de una de esas amplias bahías que recortan la orilla oriental del río Hudson, en esa amplia expansión del río denominada por los antiguos navegantes holandeses Tappan Zee, y donde siempre prudente se reducían las velas e imploraban la protección de San Nicolás al cruzarla, se encuentra un pequeño pueblo de mercado o puerto rural, al que algunos llaman Greensburgh, pero que es más común y propiamente conocido por el nombre de Tarry Town. Este nombre, nos cuentan, fue dado en tiempos antiguos por las buenas amas de casa de los alrededores, debido a la inveterada propensión de sus maridos a demorarse en la taberna del pueblo los días de mercado. Sea como fuere, no doy fe de este hecho, pero lo menciono solo por el deseo de ser preciso y auténtico. No muy lejos de este pueblo, quizás a unas dos millas, hay un pequeño valle, o más bien un pequeño recoveco de tierra entre altas colinas, que es uno de los lugares más tranquilos de todo el mundo. Un pequeño arroyo lo atraviesa, con el murmullo suciente para adormecer a uno; y el ocasional silbido de una codorniz o el golpeteo de un pájaro carpintero son casi los únicos sonidos que interrumpen la uniforme tranquilidad. Recuerdo que, cuando era un joven, mi primera hazaña en la caza de ardillas fue en un bosque de altos nogales que sombrean un lado del valle. 
 
@@ -909,13 +922,13 @@ Sin embargo, había un viejo caballero alto y de aspecto seco, con cejas fruncid
 
 El narrador, que estaba a punto de llevarse una copa de vino a los labios como descanso tras su esfuerzo, hizo una pausa, miró al interrogador con aire de innita deferencia, y, bajando lentamente la copa sobre la mesa, observó que la historia estaba destinada, de manera lógica, a probar lo siguiente: “Que no hay situación en la vida que no tenga sus ventajas y placeres—siempre y cuando tomemos una broma tal como viene: “Que, por lo tanto, el que corre carreras con soldados fantasmas probablemente tendrá una jineteada difícil. “Ergo, para un maestro rural, ser rechazado por la mano de una heredera holandesa es un paso seguro hacia un alto puesto en el estado.” El cauteloso viejo caballero frunció aún más las cejas tras esta explicación, desconcertado por la razonamiento del silogismo; mientras que, a mi parecer, el hombre de ropa de sal y pimienta lo miraba con una mirada triunfante. Finalmente observó que todo esto estaba muy bien, pero aún así le parecía que la historia era un poco exagerada—había uno o dos puntos sobre los cuales tenía sus dudas. “De hecho, señor,” respondió el narrador, “en cuanto a ese asunto, no creo ni la mitad de lo que he contado.” D. K
 `,
-        foto: "/Cuentos-Cl-sicos/assets/Fotos/sleepyhollow.png",
-    },
-    {
-        id: 12,
-        autor: "Bram Stoker",
-        titulo: "La casa del juez",
-        historia: `Cuando se fue acercando la época de exámenes, Malcolm Malcolmson decidió irse a algún lugar solitario donde pudiera estudiar sin ser interrumpido. Temía las playas, por lo atractivas, y también desconfiaba del completo aislamiento rural, pues desde hacía tiempo conocía sus encantos. Lo que buscaba era un pueblecito sin pretensiones ni nada que le distrajese del estudio y se decidió a encontrarlo. Aguantó su deseo de pedir consejo a algún amigo, pues pensó que cada uno de ellos le recomendaría un sitio ya conocido donde, sin duda, tendría amigos a su vez.
+    foto: "/Cuentos-Cl-sicos/assets/Fotos/sleepyhollow.png",
+  },
+  {
+    id: 12,
+    autor: "Bram Stoker",
+    titulo: "La casa del juez",
+    historia: `Cuando se fue acercando la época de exámenes, Malcolm Malcolmson decidió irse a algún lugar solitario donde pudiera estudiar sin ser interrumpido. Temía las playas, por lo atractivas, y también desconfiaba del completo aislamiento rural, pues desde hacía tiempo conocía sus encantos. Lo que buscaba era un pueblecito sin pretensiones ni nada que le distrajese del estudio y se decidió a encontrarlo. Aguantó su deseo de pedir consejo a algún amigo, pues pensó que cada uno de ellos le recomendaría un sitio ya conocido donde, sin duda, tendría amigos a su vez.
 
 Malcolmson deseaba evitar a las amistades y tenía aún muchos menos deseos de trabar contacto con los amigos de los amigos. Por ello decidió irse él solo a buscar el lugar por sí mismo. Hizo su equipaje, consistente en una maleta con algunas ropas y todos los libros que necesitaba, y sacó billete para el primer nombre desconocido que vio en el itinerario local de ferrocarriles.
 
@@ -1139,13 +1152,13 @@ Al comenzar a sonar la campana de alarma de la Casa del Juez, se congregó en se
 Del extremo de la cuerda de la gran campana de alarma pendía el cuerpo del estudiante; y en el cuadro, la cara del Juez mostraba una sonrisa maligna.
 
 `,
-        foto: "/Cuentos-Cl-sicos/assets/Fotos/lacasadeljuez.png",
-    },
-    {
-        id: 13,
-        autor: "S.L Fanu",
-        titulo: "Extraño suceso en la vida de Schalken el pintor",
-        historia: `Sétima Extracto del Legado del difunto Francis Purcell, P. P. de Drumcoolagh. Sin duda, te sorprenderá, querido amigo, el tema de la siguiente narración. ¿Qué relación tenía yo con Schalken, o Schalken conmigo? Él había regresado a su tierra natal, y probablemente ya estaba muerto y enterrado, antes de que yo naciera; nunca visité Holanda ni hablé con un nativo de ese país. Esto es algo que ya sabes. Debo, pues, explicarte mi autoridad y exponerte con franqueza la base sobre la cual descansa la credibilidad de la extraña historia que estoy a punto de presentarte. En mis primeros años, conocí a un Capitán Vandael, cuyo padre había servido al Rey Guillermo en los Países Bajos, y también en mi propia tierra desdichada durante las campañas en Irlanda. 
+    foto: "/Cuentos-Cl-sicos/assets/Fotos/lacasadeljuez.png",
+  },
+  {
+    id: 13,
+    autor: "S.L Fanu",
+    titulo: "Extraño suceso en la vida de Schalken el pintor",
+    historia: `Sétima Extracto del Legado del difunto Francis Purcell, P. P. de Drumcoolagh. Sin duda, te sorprenderá, querido amigo, el tema de la siguiente narración. ¿Qué relación tenía yo con Schalken, o Schalken conmigo? Él había regresado a su tierra natal, y probablemente ya estaba muerto y enterrado, antes de que yo naciera; nunca visité Holanda ni hablé con un nativo de ese país. Esto es algo que ya sabes. Debo, pues, explicarte mi autoridad y exponerte con franqueza la base sobre la cual descansa la credibilidad de la extraña historia que estoy a punto de presentarte. En mis primeros años, conocí a un Capitán Vandael, cuyo padre había servido al Rey Guillermo en los Países Bajos, y también en mi propia tierra desdichada durante las campañas en Irlanda. 
 
 No sé cómo ocurrió que me agradara la compañía de este hombre, a pesar de sus políticas y su religión, pero así fue; y fue gracias al libre intercambio de ideas que nuestra intimidad permitió, que llegué a conocer la curiosa historia que estás a punto de escuchar. A menudo, mientras visitaba a Vandael, me llamaba la atención un cuadro notable, en el cual, aunque no soy un experto, no podía dejar de notar algunas peculiaridades muy marcadas, particularmente en la distribución de la luz y la sombra, así como una cierta rareza en el diseño mismo, lo que despertaba mi curiosidad. 
 
@@ -1244,7 +1257,8 @@ Estaba tirado en una celda de considerable tamaño, la cual no había sido pertu
 
 El cuadro representa una habitación de albañilería antigua, como las que se pueden encontrar en la mayoría de las viejas catedrales, y está tenuemente iluminado por una lámpara que lleva en la mano una gura femenina, como la que hemos intentado describir; en el fondo, y a la izquierda de quien examina la pintura, se encuentra la gura de un hombre aparentemente despertado del sueño, y por su actitud, con la mano sobre la espada, mostrando considerable alarma: esta última gura está iluminada solo por el resplandor moribundo de un fuego de leña o carbón. Toda la obra exhibe una hermosa muestra de esa distribución artística y singular de luz y sombra que ha hecho inmortal el nombre de Schalken entre los artistas de su país. Esta historia es tradicional, y el lector fácilmente percibirá, por nuestra cuidadosa omisión de realzar muchos puntos de la narrativa, cuando un poco de color adicional podría haber agregado efecto al relato, que hemos deseado presentar ante él no un invento de la mente, sino una curiosa tradición vinculada a, y perteneciente, a la biografía de un artista famoso.
 `,
-        foto: "/Cuentos-Cl-sicos/assets/Fotos/lavidadelpintor.png",
-    },
+    foto: "/Cuentos-Cl-sicos/assets/Fotos/lavidadelpintor.png",
+  },
 ];
+
 renderizado();
