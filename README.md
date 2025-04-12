@@ -1,8 +1,10 @@
-# 🕯️Cuentos Aleatorios
+# 🕯️Random Stories
 
-Un iterador de cuentos aleatorios escrito en HTML, CSS y TypeScript
+Random story selector written in HTML, CSS, and TypeScript.
 
-- Click en tema para modos claro / oscuro.
-- Click en siguiente para obtener un cuento aleatorio.
+-Click on "tema" to switch between light and dark mode.
 
-📝Nota: Todas las historias se encuentran en dominio publico.
+-Click on "siguiente" to get a random story.
+
+📝 Note: All stories are in the public domain.
+
