@@ -1,10 +1,7 @@
 # 🕯️Random Stories
 
-Random story selector written in HTML, CSS, and TypeScript.
+Random iterator function designed and developed in HTML, CSS, and TypeScript. Components work independently from content sources, providing a
+maintainable user interface. 
 
--Click on "tema" to switch between light and dark mode.
-
--Click on "siguiente" to get a random story.
-
-📝 Note: All stories are in the public domain.
+🍁 live: https://gedisoncode.github.io/Cuentos-Cl-sicos/
 
